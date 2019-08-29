@@ -1,0 +1,42 @@
+esphome:
+  name: office_motion
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "Pretty Fly For A WiFi"
+  password: "Hawkshead1"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+i2c:
+  sda: D5
+  scl: D6
+  scan: True
+  
+binary_sensor:
+  - platform: gpio
+    pin: D1
+    name: "Office Motion Sensor"
+    device_class: motion
+
+sensor:
+  - platform: dht
+    pin: D2
+    temperature:
+      name: "Office Temperature"
+    humidity:
+      name: "Office Humidity"
+    update_interval: 60s
+    model: DHT11
+  
+  - platform: bh1750
+    name: "BH1750 Illuminance"
+    address: 0x23
+    update_interval: 20s
