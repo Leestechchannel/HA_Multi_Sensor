@@ -4,8 +4,8 @@ esphome:
   board: d1_mini
 
 wifi:
-  ssid: "Pretty Fly For A WiFi"
-  password: "Hawkshead1"
+  ssid: "YOUR_WIFI_SSID"
+  password: "YOUR_WIFI_PASSWORD"
 
 # Enable logging
 logger:
